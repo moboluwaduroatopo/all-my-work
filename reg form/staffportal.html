@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="jquery/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="jquery/popper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<style type="text/css">
+  label{
+    color: red;
+  }
+</style>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-#65ADBD " style="background-color: #65ADBD;">
+      <!--  <img src="ATOPO LOGO.png" style="width:100px;height:45px">-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a href="" class="nav-link">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="session.html" class="nav-link">session</a>
+            </li>
+            <li class="nav-item">
+              <a href="course.html" class="nav-link">course</a>
+            </li>
+            
+             <li class="nav-item">
+              <a href="" class="nav-link">Logout</a>
+            </li>
+          </ul>
+          
+        </div>
+       </nav>
+      <div id="form2" class="container" style=" background-color: #f5f5f5;width: 60%;height: 1000px;margin-top: 70px ">
+<form class="form-horizontal" method="post" action="course_process.php" enctype="multipart/form-data">
+
+<fieldset>
+
+<!-- Form Name -->
+<div id="displaysession1">
+<legend style="color:#FF5500">Add new course</legend>
+<div class="text-primary" id="displaySession"></div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course Name:</label>  
+  <div class="col-md-6">
+  <input id="cname" name="cname" type="text" placeholder="Course Name" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course Code:</label>  
+  <div class="col-md-6">
+  <input id="ccode" name="ccode" type="text" placeholder="Course Code" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course Description:</label>  
+  <div class="col-md-6">
+  <textarea class="form-control" name="cdesc" id="cdesc"></textarea>
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="submitCourse"  name="submit" class="btn btn-primary button1">submit</button>
+  </div>
+</div></div>
+</fieldset>
+</form>
+<form method="post" action="session_process.php">
+      <div class="form-group" id="form2">
+      <legend style="color:#FF5500">Add new Session: </legend>  
+  <div class="col-md-6">
+  <input id="session" name="session" type="text" placeholder="Input session" class="form-control input-md" required="">
+    
+  </div>
+</div>
+    <div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-6">
+    <button id="singlebutton"  name="submit" class="btn btn-primary button1">submit</button>
+  </div>
+</div> 
+</form>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course Code:</label>  
+  <div class="col-md-6">
+  <input id="ccode" name="ccode" type="text" placeholder="Course Code" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course title:</label>  
+  <div class="col-md-6">
+  <input id="ctitle" name="ctitle" type="text" placeholder="Course title" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Course description:</label>  
+  <div class="col-md-6">
+  <input id="cdescri" name="cdescri" type="text" placeholder="Course description" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-6">
+    <button id="singlebutton"  name="submit" class="btn btn-primary button1">Ok</button>
+    <button id="singlebutton"  name="submit" class="btn btn-primary button1">Cancal</button>
+  </div>
+    
+    <div id="footer" style="color:white; clear:both; text-align:center; padding:5px; " class="bg-info fixed-bottom">
+Copyright © SQI INC
+</div>
+</body>
+
+<script type="text/javascript" src="Bootstrap4/js/jquery-3.2.1.min.js"></script>
+<script src="Bootstrap4/js/bootstrap.js"></script>
+<script src="Bootstrap4/js/popper.min.js"></script>
+<script type="text/javascript">
+  window.addEventListener("load",myFunction);
+
+   function myFunction(){
+    $.post("session_display.php", "", function(call){
+      $("body").find("#displaySession").append("<div>"+call+"</div>");
+    })
+   }
+function myFunction2(){
+    $.post("course_display.php", "", function(call){
+      $("body").find("#displaysession1").append("<div>"+call+"</div>");
+    })
+   }
+    
+   $("#submitCourse").on("click", function(){
+    id=$("#id").val();
+    cname=$("#cname").val()
+    ccode=$("#ccode").val()
+    cdesc=$("#cdesc").val()
+    $.post("course_process.php", {ccode:ccode,cname:cname, cdesc:cdesc,id:id}, function(callback){
+      if (callback == "Sucessful"){
+        alert()
+      }
+    })
+   })
+   
+</script>
+</html>

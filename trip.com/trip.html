@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		 Trip.com – Cheap Flights, Hotels, Trains
+	</title>
+</head>
+<style type="text/css">
+ 
+</style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <script type="text/javascript" src="jquery/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="jquery/popper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.css">
+<script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript" src="myscript.js"></script>
+<body>
+  <div style="margin-left: 100px">
+   <tr><td>By using this website, you are deemed to consent to our <a href="">Use of Cookies.</a></td><td><button class="btn btn-white">ok</button></td></tr>
+ </div>
+  <hr>
+  <div class="" style="margin-left: 40px;margin-top: -20px">
+     <nav class="navbar navbar-expand-lg navbar-light bg-#65ADBD " style="background-color: ;">
+      <h3> <a class="nav-link " href="#"  style="color: #009dff">Trip.com<span class="sr-only">(current)</span></a></h3>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     <h5> <li class="nav-item active">
+        <a class="nav-link " href="#"   ">Flights<span class="sr-only">(current)</span></a>
+      </li></h5>
+           <h5> <li class="nav-item active">
+              <a href="" class="nav-link">Hotels</a>
+            </li></h5>
+           <h5> <li class="nav-item active">
+              <a href="" class="nav-link">Trains</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Cars</a>
+            </li></h5>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <ul class="navbar-nav">
+        <li>
+        <a href="" class="nav-link">EN</a>
+      </li>
+      <li>
+        <a href="" class="nav-link">USD</a>
+      </li>
+      <li>
+        <a href="" class="nav-link"  data-toggle="pill">HELP</a>
+      </li>
+     
+      <li>
+        <a href="" class="nav-link"> <button class="btn btn-primary">Accounts & Booking</button></a>
+      </li>
+      <li>
+        <a href="" class="nav-link"><i class="fa fa-calculator"></i></a>
+      </li>
+    </ul>
+    </div>
+   
+  </div>
+</nav>
+  </div>
+    <div class="container-fliud" >
+    <div class="row" style="background-color: #ffffff;width: 100%;height: 400px">
+    <img src="images/backgound.jpg" style=" width: 100%;height: 350px; ">
+     <div class="if">
+      
+  <div class="tab" >
+  <button class="tablinks " onclick="openCity(event, 'Flights')"><p class="fa fa-fighter-jet"></p>Flights</button>
+  <button class="tablinks" onclick="openCity(event, 'Hotels')"><p class="fa fa-hotel"></p>Hotels</button>
+  <button class="tablinks" onclick="openCity(event, 'Trains')"><p class="fa fa-train"></p>Trains</button>
+  <button class="tablinks" onclick="openCity(event, 'Cars')"><p class="fa fa-car"></p>Cars</button>
+</div>
+
+<!-- Tab content -->
+<div id="tab">
+<div id="Flights" class="tabcontent">
+  <input type="Radio" name=""><p style="color: black; margin-left:20px;margin-top:-25px ">Mainland China</p>
+ <div  style="color: black; margin-left:145px;margin-top:-35px "><input type="Radio" name=""><a href="" class="nav-link"><p style="margin-left: 10px;margin-top:-34px ;color:black;">US</p></a></div>
+ <div  style="color: black; margin-left:225px;margin-top:-45px "><input type="Radio" name=""><a href="" class="nav-link"><p style="margin-left: 15px;margin-top:-34px ;color:black;">South Korea</p></a></div>
+  <table style=" border-collapse: collapse; width: 98%; background-color: white;height: 20px;margin-left: 10px;margin-top: -20px">
+  <tr>
+    <td colspan="" class="b"><h4 id="a">Destination or hotel name</h4><h4 id="b">City, airport,region,landmark or hotel name</h4></td>
+    <td colspan="" class=""><div id="a">Check in</div><div id="c" class="a"> </div></td>
+    <td style="color: " id="a">1<br>night(s) </td>
+    <td><div id="a">Check out</div><div id="it" class="a"> </div> </td>
+    <td class="b"><ul class="navbar-nav "><li class="nav-item active">
+              <a href="" class="nav-link" id="a">Number of guests per room</a>
+              <a href="" class="nav-link a dropdown-toggle" data-toggle="dropdown" >1 Adult, 0 Children</a>
+               <ul class="dropdown-menu">
+                <p>please select the number of guests per room.</p>
+                <li class="nav-item"><a class="nav-link" href="">Adults(18+yrs)</a></li>
+                 <li class="nav-item"><a class="nav-link" href="">Children(0-17 yrs)</a></li>
+              </ul>
+            </li></ul></td>
+
+  </tr>
+ </table>
+</div>
+
+<div id="Hotels" class="tabcontent" style="background-color: ;width: 100%;height: 50px">
+ <table style=" border-collapse: collapse; width: 98%; background-color: white;height: 20px;margin-left: 10px">
+  <tr>
+    <td colspan="" class="b"><h4 id="a">Destination or hotel name</h4><h4 id="b">City, airport,region,landmark or hotel name</h4></td>
+    <td colspan="" class=""><div id="a">Check in</div><div id="c" class="a"> </div></td>
+    <td style="color: " id="a">1<br>night(s) </td>
+    <td><div id="a">Check out</div><div id="it" class="a"> </div> </td>
+    <td class="b"><ul class="navbar-nav "><li class="nav-item active">
+              <a href="" class="nav-link" id="a">Number of guests per room</a>
+              <a href="" class="nav-link a dropdown-toggle" data-toggle="dropdown" >1 Adult, 0 Children</a>
+               <ul class="dropdown-menu">
+                <p>please select the number of guests per room.</p>
+                <li class="nav-item"><a class="nav-link" href="">Adults(18+yrs)</a></li>
+                 <li class="nav-item"><a class="nav-link" href="">Children(0-17 yrs)</a></li>
+              </ul>
+            </li></ul></td>
+
+  </tr>
+ </table>
+
+<div style="background-color: white;width: 98%;height: 40px;margin-left: 10px ">
+  <p id="a" style="color: ;margin-top: -5px">Traveling </p>
+  <input type="Radio" name=""><p style="color: black; margin-left:20px;margin-top:-25px ">Business</p>
+ <div  style="color: black; margin-left:120px;margin-top: -40px"><input type="Radio" name=""><a href="" class="nav-link"><p style="margin-left: 10px;margin-top: -35px;color:black;">Leisure</p></a></div>
+   <p id="a" style="margin-top: -80px;margin-left: 250px">Star Rating(Optional)</p><div>
+    <div style="background-color: #eeeeee;width: 40px;height:20px;margin-left: 250px;margin-top: 15px;color: black">
+      2<p class="fa fa-star" style="color: #cccccc"></p></div>
+     <div style="background-color: #eeeeee;width: 40px;height:20px;margin-left: 300px;margin-top: -20px;color: black">3<p class="fa fa-star" style="color: #cccccc"></p></div>
+     <div style="background-color: #eeeeee;width: 40px;height:20px;margin-left: 350px;margin-top: -20px;color: black">4<p class="fa fa-star" style="color: #cccccc"></p></div>
+     <div style="background-color: #eeeeee;width: 40px;height:20px;margin-left: 400px;margin-top: -20px;color: black">5<p class="fa fa-star" style="color: #cccccc"></p></div>
+     <div class=" button">
+       <button id="button"  class="btn btn-warning " type="submit">Search</button>
+     </div>
+   </div>
+   </div></div>
+   <div id="Trains" class="tabcontent">
+<input type="Radio" name=""><p style="color: black; margin-left:20px;margin-top:-25px ">Mainland China</p>
+ <div  style="color: black; margin-left:145px;margin-top:-35px "><input type="Radio" name=""><a href="" class="nav-link"><p style="margin-left: 10px;margin-top:-34px ;color:black;">US</p></a></div>
+ <div  style="color: black; margin-left:225px;margin-top:-45px "><input type="Radio" name=""><a href="" class="nav-link"><p style="margin-left: 15px;margin-top:-34px ;color:black;">South Korea</p></a></div>
+  <table style=" border-collapse: collapse; width: 98%; background-color: white;height: 20px;margin-left: 10px;margin-top: -20px">
+  <tr>
+    <td colspan="" class="b"><h4 id="a">Destination or hotel name</h4><h4 id="b">City, airport,region,landmark or hotel name</h4></td>
+    <td colspan="" class=""><div id="a">Check in</div><div id="c" class="a"> </div></td>
+    <td style="color: " id="a">1<br>night(s) </td>
+    <td><div id="a">Check out</div><div id="it" class="a"> </div> </td>
+    <td class="b"><ul class="navbar-nav "><li class="nav-item active">
+              <a href="" class="nav-link" id="a">Number of guests per room</a>
+              <a href="" class="nav-link a dropdown-toggle" data-toggle="dropdown" >1 Adult, 0 Children</a>
+               <ul class="dropdown-menu">
+                <p>please select the number of guests per room.</p>
+                <li class="nav-item"><a class="nav-link" href="">Adults(18+yrs)</a></li>
+                 <li class="nav-item"><a class="nav-link" href="">Children(0-17 yrs)</a></li>
+              </ul>
+            </li></ul></td>
+
+  </tr>
+ </table>
+</div>
+<div id="Cars" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+ </div>
+    </div>
+  </div>
+</div>
+<main class="contianer" style=" background-color: #F9FDFF;width: 100%;height: 100px;margin-top: -50px">
+  <div class="container">
+        <div class="row  " >
+         <img src="images/Capture.png">
+          <div class="col-md-4">
+            <h5>
+    Trusted Online Travel Leader </h5>
+              <h6><small> 300 million members & 30 million authentic reviews </small></h6>
+     
+             
+      </div>
+               <img src="images/Capture1.png">
+          <div class="col-md-3">
+           
+                <h5>
+       Service You Can Trust </h5>
+                <h6><small> One-stop multilingual service & hassle-free travel </small></h6>
+                
+                
+                
+          </div>
+                  <img src="images/Capture2.png">
+          <div class="col-md-3">
+                <h5>
+        Worldwide Coverage 
+          </h5>
+              <h6><small> Over 1,200,000 hotels in more than 200 countries &<br> flights to over 5,000 cities</small></h6>
+                  </div>
+           </div>
+      </div>
+</main>
+<div class="container" >
+   <div class="row">
+     <div class="col-md-12">
+            <h3 class="font-weight-bold text-center">Today's Top Deals</h3>
+            <hr/>
+          </div>
+ <table style="border: 1px solid black">
+   <tr><td id="border"><img src="images/imag1.jpg" style="width: 430px;height: 250px">
+     <a href="" class="nav-link" style="color: black"> <h5>Save up to 30% on Hotels in Trip.com's...</h5>
+               <h6><small>Get away this summer for less with Trip.com!</small></h6></a>
+            </td>
+    <td id="border"><img src="images/imag2.jpg" style="width:430px;height: 250px"> <h5>Save up to 40% on Okinawa Hotel</h5>
+               <h6><small>Explore Subtropical Japan for Less</small></h6></a>
+    </td>
+    <td id="border"><img src="images/imag3.jpg" style="width:430px;height: 250px">
+     <h5>Save CNY 80 Hotel Booking with V...</h5>
+                 <P>Book your next break in China now and save</P></td></tr>
+ </table>
+
+    </div></div>
+         
+          <div style="margin-left: 10%;">
+       <div class="col-md-12">
+            <h3 class="font-weight-bold text-center">Recommended Hotels</h3>
+            <hr/>
+          </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-#65ADBD " style="background-color: ;">
+      <button class="btn btn-info">New York</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     <h5> <li class="nav-item active">
+        <a class="nav-link " href="#"   ">Los Angeles<span class="sr-only">(current)</span></a>
+      </li></h5>
+           <h5> <li class="nav-item active">
+              <a href="" class="nav-link">London</a>
+            </li></h5>
+           <h5> <li class="nav-item active">
+              <a href="" class="nav-link">Paris</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Hong Kong</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Shanghai</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Bangkok</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Seoul</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Tokyo</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Singapore</a>
+            </li></h5>
+    </ul>
+   
+  </div>
+</nav>
+    </div>
+
+    <div class="container">
+      <table style="border: 1px solid black">
+   <tr><td id="border"><img src="images/img4.jpg" style="width: 430px;height: 250px">
+     <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>Innside New York NoMad</h5>
+         <h5 class="text-center">4/5(2 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"> <h5 class="text-right">$199 </h5>
+               </a>
+            </td>
+    <td id="border"><img src="images/img5.jpg" style="width:430px;height: 250px"> 
+      <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>Millennium Hilton New York Downtown </h5><h5 class="text-center">4.5/5(477 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"><p class="text-left">"Excellent loction"<br>"Convenient transport options"</p> <h5 class="text-right" style="margin-top: -40px">$451 </h6>
+               </a>
+    </td>
+    <td id="border"><img src="images/img6.jpg" style="width:430px;height: 250px"> <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>Holiday Inn Manhattan Financial District</h5><h5 class="text-center">4.4/5(2155 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"><p class="text-left">"Excellent loction"<br>"Convenient transport options"</p> <h5 class="text-right" style="margin-top: -40px">$391 </h5>
+               </a>
+     </td>
+   </tr>
+                 <tr><td id="border"><img src="images/img7.jpg" style="width: 430px;height: 250px">
+     <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>DoubleTree by Hilton New York Times Sq...</h5><h5 class="text-center">4.2/5(97 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"><p class="text-left">"Room was okay"<br>"Excellent loction"</p> <h5 class="text-right" style="margin-top: -40px">$440 </h5>
+               </a>
+            </td>
+    <td id="border"><img src="images/img5.jpg" style="width:430px;height: 250px">
+       <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>Hyatt Centric Times Square New York</h5><h5 class="text-center">4.6/5(247 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"><p class="text-left">"Excellent loction"<br>"Room was good"</p> <h5 class="text-right" style="margin-top: -40px">$679</h5>
+               </a>
+    </td>
+    <td id="border"><img src="images/img8.jpg" style="width:430px;height: 250px">
+      <a href="" class="nav-link" style="color: black"> 
+      <div id="y">
+         <h5>Millennium Hilton New York One UN Plaza</h5><h5 class="text-center">4.5/5(70 reviews)</h5>
+       </div></a>
+        <a href="" class="nav-link" style="color: black"><p class="text-left">"Excellent loction"<br>"Room was good ""Quit"</p> <h5 class="text-right" style="margin-top: -40px">$669 </h5>
+               </a></td></tr>
+ </table>
+ <p class="text-right">Average price per night <a href="">More</a></p>
+</div>
+    <div style="margin-left: 10%;">
+       <div class="col-md-12">
+            <h3 class="font-weight-bold text-center">Top Round-trip Flight Deals</h3>
+            <hr/>
+          </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-#65ADBD " style="background-color: ;">
+      <button class="btn btn-info">New York</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Hong Kong</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Seoul</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Taipei</a>
+            </li></h5>
+            <h5> <li class="nav-item active">
+              <a href="" class="nav-link ">Tokyo</a>
+            </li></h5>
+    </ul>
+   
+  </div>
+</nav>
+    </div> 
+</body>
+
+</html>

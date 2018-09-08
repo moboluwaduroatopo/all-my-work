@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student registration form</title>
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+  <style type="text/css">
+  	#color{
+  		color: white
+  	}
+  </style>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-toggleable navbar-expand-sm navbar-inverse" style="background-color: #65ADBD;">
+       <!-- <img src="ATOPO LOGO.png" style="width:100px;height:45px">-->
+        <button class="navbar-toggler" data-target="#hello" data-toggle="collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="narbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="home.html" class="nav-link">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="staff.html" class="nav-link">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a href="student.html" class="nav-link">Student</a>
+            </li>
+            <li class="nav-item">
+              <a href="result.html" class="nav-link">Result</a>
+            </li>
+             <li class="nav-item">
+              <a href="course.html" class="nav-link">Course</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" id="form">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </div>
+         
+      </nav>
+ <div class="container" style=" background-color: #025AA5;width: 60%;height: 630px;margin-top: 70px ">
+<form class="form-horizontal" method="post" action="stu.php">
+
+<fieldset>
+
+<!-- Form Name -->
+<legend style="color:#FF5500; text-align: center; ">QUESTION</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">sectionid</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="option1" type="text" placeholder="Enter option1" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput"  id="color">question</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="ques" type="text" placeholder="Enter question" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">option1</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="option1" type="text" placeholder="Enter option1" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">option2</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="option2" type="text" placeholder="Enter option2" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput"  id="color">option3</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="option3" type="text" placeholder="Enter option3" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">option4</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="option4" type="text" placeholder="Enter option4" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">answer</label>  
+  <div class="col-md-6">
+  <input id="textinput" name="answer" type="text" placeholder="Enter answer" class="form-control input-md" required="">
+    
+  </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="submit" class="btn btn-primary">LogIn</button>
+  </div>
+</div>
+</body>
+</html>

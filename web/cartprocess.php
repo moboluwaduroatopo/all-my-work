@@ -16,12 +16,14 @@
                 $item = $product.', '.$item;
             }
         endforeach;
-        $amount = $_SESSION['totalprice'];
+
+        $amount = $total ;
          $q=mysqli_query($con, "INSERT INTO order(name,contact,address,email,item,amount,status,dateOrdered,dateDelivered)VALUES('$fullname','$contact','$address','$email','$item','$amount','unconfirmed','$date','')");
-    
+         
         if ($q) {
             unset($_SESSION['cart']); 
-        header("location:../success.php");
+ echo $total;
+       // header("location:../success.php");
         }
         else{
             echo "failed".mysqli_error($con);

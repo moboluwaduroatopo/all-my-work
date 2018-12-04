@@ -49,9 +49,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Products</h1>
+		<h1>Shop</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Products</h2>
+		<h2><a href="index.html">Home</a><label>/</label>Shop</h2>
 	</div>
 </div>
 	<!--content-->
@@ -62,7 +62,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<?php
 			 $con=mysqli_connect("localhost","root","","ad10cakstore");
 			 // $tid= $_GET['tid'];
-  $view = mysqli_query($con, "select * from product_tb join type_tb using (type_id) WHERE product_id <= 9")or die(mysqli_error($con));
+			 $limit = 9; 
+
+
+    if (isset($_GET["page"] )) 
+        {
+        $page  = $_GET["page"]; 
+        } 
+    else 
+       {
+        $page=1; 
+       };  
+
+$record_index= ($page-1) * $limit;      
+
+  $view = mysqli_query($con, "select * from product_tb join type_tb using (type_id) LIMIT $record_index, $limit")or die(mysqli_error($con));
 $counter = 0;
 while($r=mysqli_fetch_array($view)){
  $id=$r['product_id'];
@@ -75,14 +89,14 @@ echo "
 						<img src='".$r['proimage']."' class='img-responsive' alt='' >
 						<div class='zoom-icon '>
 						<a class='picture' href='".$r['proimage']."' rel='title' class='b-link-stripe b-animate-go  thickbox'><i class='glyphicon glyphicon-search icon '></i></a>
-						<a href='single.html'><i class='glyphicon glyphicon-menu-right icon'></i></a>
+						<a href='single.php?id=".$id."'><i class='glyphicon glyphicon-menu-right icon'></i></a>
 						</div>
 						</div>
 						<div class='mid-1'>
 						<div class='women'>
 						<div class='women-top'>
 							<span>".$r['type_name']."</span>
-							<h6><a href='single.html'>".$r['product_name']."</a></h6>
+							<h6><a href='single.php?id=".$id."'>".$r['product_name']."</a></h6>
 							</div>
 							<div class='img item_add'>
 								<a href='#'><img src='images/ca.png' alt=''></a>
@@ -107,7 +121,28 @@ echo "
 // 	}
 
 }
+$sql = "SELECT COUNT(*) FROM product_tb"; 
+$retval1 = mysqli_query($con, $sql);  
+$row = mysqli_fetch_row($retval1);  
+$total_records = $row[0];
+//$limit = 2;
+echo "<ul class='pagination'>";
 
+    echo "<li><a href='shop.php?page=".($page-1)."' class='button'>Previous</a></li>"; 
+    // echo "<li><a href='p.php?page=".$i."'>".$i."</a></li>";
+    echo "<li><a href='shop.php?page=".($page+1)."' class='button'>NEXT</a></li>";
+
+
+    echo"</ul>"; 
+    //  echo $total_records;
+// $total_pages = ceil($total_records / $limit);  
+// //$pagLink = "<div class='pagination'>";  
+// for ($i=1; $i<=$total_pages; $i++) {  
+
+                  
+// };  
+//echo $pagLink . "</div>";     
+    mysqli_close($con);
 ?>
 					<div class="clearfix"></div>
 				</div>

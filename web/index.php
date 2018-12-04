@@ -1,45 +1,4 @@
-<?php
-/*
-Author: Javed Ur Rehman
-Website: https://www.allphptricks.com
-*/
-// session_start();
-// $con=mysqli_connect("localhost","root","","ad10cakstore");
-// $status="";
-// if (isset($_POST['code']) && $_POST['code']!=""){
-// $code = $_POST['code'];
-// $result = mysqli_query($con,"SELECT * FROM product_tb where `code`='$code' ");
-// $row = mysqli_fetch_assoc($result);
-// $product_name = $row['product_name'];
-// $code= $row['code'];
-// $price = $row['price'];
-// $proimage = $row['proimage'];
 
-// $cartArray = array(
-// 	$code=>array(
-// 	'product_name'=>$product_name,
-// 	'code'=>$code,
-// 	'price'=>$price,
-// 	'quantity'=>1,
-// 	'proimage'=>$proimage)
-// );
-
-// if(empty($_SESSION["shopping_cart"])) {
-// 	$_SESSION["shopping_cart"] = $cartArray;
-// 	$status = "<div class='box'>Product is added to your cart!</div>";
-// }else{
-// 	$array_keys = array_keys($_SESSION["shopping_cart"]);
-// 	if(in_array($code,$array_keys)) {
-// 		$status = "<div class='box' style='color:red;'>
-// 		Product is already added to your cart!</div>";	
-// 	} else {
-// 	$_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"],$cartArray);
-// 	$status = "<div class='box'>Product is added to your cart!</div>";
-// 	}
-
-// 	}
-// }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- <span>intelligent systems</span> -->
 					</div>
 					<div class="rw-words rw-words-2">
-						<span>Ad10cakstore</span>
+						<span>moboluwaduro A.(MA)cake</span>
 						<span>to working with you</span>
 						<span>Cakes</span>
 						<span>& more</span>
@@ -137,16 +96,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					echo"
 					
 						<div class='col-1'>
-						 <a href='single.html' class='b-link-stroke b-animate-go  thickbox'>
+						 <a href='single.php?id=".$id."' class='b-link-stroke b-animate-go  thickbox'>
 		   <img src='".$r['type_image']."' class='img-responsive' alt=''/><div class='b-wrapper1 long-img'><p class='b-animate b-from-right    b-delay03 '>Birthday</p><label class='b-animate b-from-right    b-delay03 '></label><h3 class='b-animate b-from-left    b-delay03 '>Number</h3></div></a>
 
-							<!---<a href='single.html'><img src='images/pi.jpg' class='img-responsive' alt=''></a>-->
+							
 						</div>
 						<div class='col-2'>
 							<span>".$r['type_name']."</span>
-							<h2><a href='single.php?id=".$id."'>Number Cakes </a></h2>
+							<h2><a href='product.php?tid=".$r['type_id']."'>Number Cakes </a></h2>
 							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href='single.html' class='buy-now'>Buy Now</a>
+							<a href='product.php?tid=".$r['type_id']."' class='buy-now'>Veiw Now</a>
 						</div>
 					
 					";
@@ -166,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					echo"
 					
 						<div class='col-3'>
-							<a href='single.php'><img src='".$r['type_image']."' width=400px height =400px class='img-responsive' alt=''>
+							<a href='single.php?id=".$id."'><img src='".$r['type_image']."' width=400px height =400px class='img-responsive' alt=''>
 							<div class='col-pic'>
 								<p>Lorem Ipsum</p>
 								<label></label>
@@ -183,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<!--products-->
 			<div class="content-mid">
-				<h3>Trending Items</h3>
+				<h3>Cakes </h3>
 				<label class="line"></label>
 				<div class='mid-popular'>
 					<div class="row">
@@ -216,7 +175,7 @@ echo "
 							<h6><a href=''></a>".$r['product_name']."</h6>
 							</div>
 							<div class='img item_add'>
-							<button type='submi' class='bu add-to-cart btn btn-dangar' id='add-to-cart'>add-to-cart</button>	
+							<a href='single.php?id=".$id."'><button type='submi' class='bu add-to-cart btn btn-dangar' id='add-to-cart'>View more</button></a>	
 							</div>
 							<div class='clearfix'></div>
 							</div>
@@ -290,10 +249,7 @@ echo "
 		<!--//footer-->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- <script src="js1/jquery.js"></script>
-	<script src="js1/bootstrap.min.js"></script>
-    <script src="js1/main.js"></script>
-    <script src="js1/script.js"></script>
+
 	
  
 </body>

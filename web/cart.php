@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <td colspan="3" class="text-right"><strong>TOTAL</strong></td>
                                     <td colspan="2" class="text-danger"><strong><?php echo number_format($total,2) ?></strong></td>
                                 </tr>
-                                                   
+                                               
                         </tbody>
                     </table>
                     <div class="pull-right">

@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
 <!--- start-rate---->
 <script src="js/jstarbox.js"></script>
-	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
 	<style type="text/css">
 		
 		.cart {
@@ -82,6 +82,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					} 
 				})
 			});
+		});
+		</script>
+			<script src="js/simpleCart.min.js"> </script>
+
+<!-- <script src="js/bootstrap.min.js"></script> -->
+ <!--light-box-files -->
+		<script src="js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('a.picture').Chocolat();
 		});
 		</script>
 <!---//End-rate---->
@@ -283,9 +295,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>				
 			</li>
 			<li><a class="color3" href="http://localhost/web/shop.php">Shop</a></li>
-			<li><a class="color4" href="404.html">About</a></li>
-            <li><a class="color5" href="typo.html">Short Codes</a></li>
-            <li ><a class="color6" href="contact.html">Contact</a></li>
+			<li><a class="color4" href="about.php">About</a></li>
+           <!--  <li><a class="color5" href="typo.html">Short Codes</a></li>
+ -->            <li ><a class="color6" href="contact.php">Contact</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
 
@@ -355,18 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-	<script src="js/simpleCart.min.js"> </script>
-<!-- slide -->
-<script src="js/bootstrap.min.js"></script>
- <!--light-box-files -->
-		<script src="js/jquery.chocolat.js"></script>
-		<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
-		<!--light-box-files -->
-		<script type="text/javascript" charset="utf-8">
-		$(function() {
-			$('a.picture').Chocolat();
-		});
-		</script>
+
 		
 </body>
 </html>

@@ -71,7 +71,7 @@ require("conn.php");
              $n++;
                    $id=$r['product_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td><img src='".$r['proimage']."' width=30px height =30px></td><td>".$r['product_name']."</td><td>".$r['price']."</td><td>".$r['date']."</td><td>".$r['decrip1']."</td><td>".$r['decrip2']."</td><td><a href='edit.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
+echo "<tr><td>". $n."</td><td><img src='".$r['proimage']."' width=30px height =30px></td><td>".$r['product_name']."</td><td>".$r['price']."</td><td>".$r['date']."</td><td>".$r['decrip1']."</td><td>".$r['decrip2']."</td><td><a href='editproduct.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
 <td><a href='deletestaff.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
 }
 

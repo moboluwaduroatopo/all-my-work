@@ -103,21 +103,27 @@ class Shopping {
         $contact = $_POST['contact'];   
         $address = $_POST['address'];   
         $email = $_POST['email']; 
+        $amount=$_POST['amount'];
         $item = '';
+        
         $date = date('m/d/y h:i:s A');
       
         foreach($_SESSION['cart'] as $row):
             if($row['qty'] != 0){
                 $product = '('.$row['qty'].') '.$row['product'];
                 $item = $product.', '.$item;
+               // $amount=$row['totalprice'];
             }
         endforeach;
-        $amount = $_SESSION['totalprice'];
-
-         $q=mysqli_query($con, "INSERT INTO `order_tb`(`name`, `contact`, `address`, `email`, `item`, `amount`, `status`, `dateOrdered`, `dateDelivered`) VALUES ('$fullname',$contact,'$address','$email','$item',$amount,'unconfirmed',now(),'')");
+        
+         //$amount =number_format($total,2) ;
+        //$amount1 = $_SESSION['totalprice'];
+         $q=mysqli_query($con, "INSERT INTO `order_tb`(`name`, `contact`, `address`, `email`, `item`, `amount`, `status`, `dateOrdered`, `dateDelivered`) VALUES ('$fullname','$contact', '$address' , '$email' , '$item' , '$amount', 'unconfirmed',now(),'')");
     
         if ($q) {
             unset($_SESSION['cart']); 
+            //echo $amount ;
+            //echo $fullname;
         header("location:../success.php");
         }
         else{

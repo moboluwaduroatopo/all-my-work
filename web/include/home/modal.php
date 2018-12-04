@@ -25,6 +25,9 @@
                 <input type="email" name="email" placeholder="(ex. info@yourdomain.com)" class="form-control">
             </div>
             <div class="form-group">
+                <input type="hidden" name="amount" placeholder="(ex. info@yourdomain.com)" class="form-control" value="<?php echo $total ?>">
+            </div>
+            <div class="form-group">
                 <label>Complete Address</label>
                 <input type="text" name="address" class="form-control" placeholder="(ex. 2/F San Jose St., Brgy. Banga, Syudad City)" required>
             </div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script  src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+<div id="my-app">
+	<input  v-model="name">
+	<p v-bind:title="name">this is a first in vue.js</p>
+	<button v-on:click="doSomething">click me</button>
+    <table border="1">
+	<tr v-for="skill of skills">
+		<td>{{ skill.name }}</td>
+		<td>{{ skill.age }}</td>
+	</tr>
+	</table>
+	<my-graph></my-graph>
+</div>
+	
+   <script type="text/javascript">
+   	Vue.component('my-graph',{
+   		template:'<li>this is a graph</li>'
+   	});
+   	var app = new Vue({
+   		el:'#my-app',
+   		data: {
+           name:'Ade',
+           skills:[{name:'ay',age:'44'},{name:'delight',age:'12'},{name:'Adeola',age:'30'}]
+   		},
+   		methods:{
+   			doSomething: function () {
+   			 alert("you " + app.skills[2].name + " I am " +app.skills[2].age +"year old");
+             //alert("done");
+   			},
+   		}
+   	})
+   </script>
+</body>
+</html>

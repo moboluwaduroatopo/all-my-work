@@ -1,0 +1,35 @@
+// {
+// 	"name":"Tawa adio",
+// 	"short_name":"Tawaatopo",
+// 	"description": "Description of my app",
+// 	"start_url":"/?homescreen=1",
+// 	"theme_color":"#0f4a73",
+// 	"icons":[{
+// 		"src":"image/Log In.png",
+// 		"sizes":"256x256",
+// 		"type":"image/Support.png"
+
+// 	}]
+
+// 
+{
+  "short_name": "Tawaatopo",
+  "name": "Moboluwaduro",
+  "icons": [
+    {
+      "src": "/image/Log In.png",
+      "type": "image/Support.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/Dashboardpng",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/maps/?source=pwa",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/atopo/",
+  "theme_color": "#3367D6"
+}

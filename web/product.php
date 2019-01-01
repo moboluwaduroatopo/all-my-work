@@ -47,12 +47,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--header-->
 <?php include 'navbar.php'; ?>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
+
+<div class='banner-top'>
+	<?php 
+$con=mysqli_connect("localhost","root","","ad10cakstore");
+$tid= $_GET['tid'];
+$view1 = mysqli_query($con, "select * from type_tb  where type_id ='$tid'")or die(mysqli_error($con));
+//$counter = 0;
+while($r=mysqli_fetch_array($view1)){
+	echo"><div class='containe'>
 		<h1>Products</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Products</h2>
-	</div>
+		<h2><a href='index.php'>Home</a><label>/</label>".$r['type_name']."</h2>
+	</div>";
+};
+?>
+	
 </div>
 	<!--content-->
 		<div class="product">

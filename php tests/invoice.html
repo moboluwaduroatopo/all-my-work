@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <script type="text/javascript" src="jquery/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="jquery/popper.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<style type="text/css">
+style='border: 1px solid #81B411;border-collapse: collapse;width: 34%;' border='1'
+.tblBorder
+{
+  border: 1px solid #81B411;border-collapse: collapse;width: 34%;'
+}
+.tblTr
+{
+background-color: #81B411;
+}
+</style>
+<body>
+     <div id="tableContainer"></div>
+</body>
+<script type="text/javascript">
+        window.onload = function what() {
+            var jsonRes = '{ "students" : [' +
+              '{ "firstName":"Michel" , "lastName":"John" ,"age":18},' +
+              '{ "firstName":"Richard" , "lastName":"Joe","age":20 },' +
+              '{ "firstName":"James" , "lastName":"Henry","age":15 } ]}';
+
+            var studentObject = JSON.parse(jsonRes);
+            alert(jsonRes)
+            var bindHtml = "";
+            if (studentObject != null) {
+
+                bindHtml += "<table class='tblBorder'>";
+                bindHtml += "<tr><th>FirstName</th><th>LastName</th><th>Age</th></tr>";
+                for (var i = 0; i < studentObject.students.length; i++) {
+                    bindHtml += "<tr style='text-align: center;'>";
+                    bindHtml += "<td>" + studentObject.students[i]["firstName"] + "</td>";
+                    bindHtml += "<td>" + studentObject.students[i]["lastName"] + "</td>";
+                    bindHtml += "<td>" + studentObject.students[i]["age"] + "</td>";
+                    bindHtml += "</tr>";
+                }
+                bindHtml = bindHtml + "</table>";
+                document.getElementById("tableContainer").innerHTML = bindHtml;
+            }
+        }
+   
+
+</script>
+</html>

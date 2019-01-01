@@ -1,0 +1,48 @@
+.containers{
+	background-color: #AFEEEE;
+	height: 470px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
+	top:100px;
+	left: 40%;
+}
+.screen{
+	background-color: #ffff99;
+	width: 270px;
+	height: 60px;
+	position: relative;
+	top: 20px;
+	left: 15px;
+}
+.screen input{
+	position: relative;
+	left: 2px;
+	top: 3px;
+	height: 56px;
+	width: 266px;
+	color: black;
+	background-color: #e5dfa0;
+	font-size: 25px;
+	text-align: right;
+
+}
+.btns{
+position: relative;
+top: 30px;
+left: 15px;
+}
+.btn{
+	width: 45px;
+	height: 30px;
+	border: none;
+	margin-left: 5px;
+	cursor:pointer;
+} 
+p{
+	line-height: 30px;
+}
+.silvers{
+	background-color: #647489;
+	color:white;
+}

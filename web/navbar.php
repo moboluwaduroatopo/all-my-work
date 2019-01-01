@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Products :: w3layouts</title>
+<title>Shopin </title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -105,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.html"><img src="images/logo.png" alt=""></a>	
+				<a href="index.php"><img src="images/logo.png" alt=""></a>	
 			</div>
 		</div>
 	</div>
@@ -113,9 +113,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
 					<ul >
-						<li><a href="login.html">Login</a></li>
-						<li><a href="register.html">Register</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
+						<li><a href="login.php">Login</a></li>
+						<li><span>Register</span></li>
+						<li><span>Checkout</span></li>
 					</ul>
 				</div>
 				

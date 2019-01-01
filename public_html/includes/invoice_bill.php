@@ -53,10 +53,26 @@ if ($_GET["order_date"] && $_GET["invoice_no"]) {
 	$pdf->Cell(180,10,"Signature",0,0,"R");
 
 	$pdf->Output("../PDF_INVOICE/PDF_INVOICE_".$_GET["invoice_no"].".pdf","F");
-
+// SELECT SUM(`total`) FROM `sale_tb` 
 	$pdf->Output();	
 
-}
-
+}product_id  | quantity_sold_last_3_mouth    
+ 1          | 50    
+ 2          | 156    
+ 3          | 78
+I have 3 mysql tables looks like this :
+product(product_id, name)
+order(order_id, order_date)
+order_detail(order_detail_id, product_id, order_id, quantity)
+select 
+    od.product_id
+  , sum(od.quantity) as quantity_sold_last_3_month
+from order o
+  inner join order_detail od
+    on o.order_id = od.order_id
+where 
+  o.order_date >= last_day(now()) + interval 1 day - interval 3 month #first of month, e.g. Jan 1 from today March 25
+  #od.order_date >= now()-interval 3 month #exactly 3 months back, e.g. Dec 25 from today
+group by od.product_id
 
 ?>

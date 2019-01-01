@@ -1,0 +1,15 @@
+<?php
+session_start();
+if(isset($_SESSION['name'])){
+    ?>
+    {
+        "status":true
+    }
+    <?php
+}else{
+?>
+{
+    "status":false
+}
+<?php
+}

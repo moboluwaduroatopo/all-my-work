@@ -75,7 +75,7 @@
     var i = $('#typs option:selected').attr('label');
     // var a = document.getElementById("price").innerHtml;
     // var a = $('#typs').val();
-   alert(i);
+   //alert(i);
     document.getElementById('pri').value=+i;
 };
 

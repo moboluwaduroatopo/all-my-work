@@ -4,14 +4,14 @@
   <?php 
    require('conn.php');
    $tid= $_GET['tid'];
-    $typ1= mysqli_query($con, "select * from category_tb where category_id ='$tid'" );
+    $typ1= mysqli_query($con, "select substr(name, 1, instr(name, ' ')-1) as first_name from category_tb where category_id ='$tid'" );
    // echo $tid;
   ?>
     <h5 class='card-header info-color white-text text-center py-4'>
         <?php
     while($r = mysqli_fetch_array($typ1)){
-      echo "<strong>".$r['name']." </strong>
-        <p>Renew Your ".$r['name']."</p>";
+      echo "<strong>".$r['first_name']." Subscription</strong>
+        <p>Renew Your ".$r['first_name']."</p>";
     }
     ?>
         
@@ -47,7 +47,18 @@
               <div class="col">
                     <div class="md-form">
                         <input type="text" id="materialRegisterFormLastName" name="iuc" class="form-control">
-                        <label for="materialRegisterFormLastName">GoTv IUC NUMBER</label>
+                         <?php 
+   require('conn.php');
+   $tid= $_GET['tid'];
+    $typ1= mysqli_query($con, "select substr(name, 1, instr(name, ' ')-1) as first_name from category_tb where category_id ='$tid'" );
+   // echo $tid;
+  ?>
+    
+        <?php
+    while($r = mysqli_fetch_array($typ1)){
+      echo "<label for='materialRegisterFormLastName'>".$r['first_name']." IUC NUMBER</label>";
+    }
+    ?>   
                     </div>
                   </div>
                    <div class="col">
@@ -68,7 +79,7 @@
                 <div class="col">
                     <!-- Last name -->
                     <div class="md-form">
-                        <input type="text" name="pwd" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" value="" id="pri">
+                        <input type="text" name="pwd" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" value="" id="pri" disabled="disabled">
                 
                     </div>
                 </div>

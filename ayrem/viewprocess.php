@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 	Class myproduct{
 		public $iuc;

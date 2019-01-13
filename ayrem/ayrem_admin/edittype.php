@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$con=mysqli_connect("localhost","root","","atopooil_db");
+ require('conn.php');
 $_SESSION['id'] = $_GET['id'];
 echo $_SESSION['id'];
 $view = mysqli_query($con, "select * from type_tb where type_id = '$_SESSION[id]'")or die(mysqli_error($con));
@@ -9,7 +9,7 @@ while($r=mysqli_fetch_array($view)){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Atopooilcompany</title>
+<title>Ayrem</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -57,19 +57,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--login-->
 <div class="container">
-  <h3 class="text-center">Update product</h3>
+  <h3 class="text-center">Update type</h3>
     <div class="login">
 
-      <form class="form-horizontal" method="post" action="edittype1.php" enctype="multipart/form-data">
+      <form class="form-horizontal" method="post" action="edittypep.php" enctype="multipart/form-data">
       <div class="col-md-6 login-do">
         <div class="login-mail">
-          <input type="text" name="name" placeholder="" value= "<?php echo $r['type_name'] ?>" >
+          <input type="text" name="name" placeholder="" value= "<?php echo $r['catname'] ?>" >
           <i class="glyphicon glyphicon-lock"></i>
-        </div> 
-         <div class="login-mail">
-          <p><img style="width: 40px;height: 40px" src="<?php echo $r['type_image'] ?>" ></p>
-           <input id="file" name="ppt" type="file" value="<?php echo $r['type_image'] ?> " class="form-control input-md" accept="image/* " >
         </div>
+           <div class="login-mail">
+          <input type="text" name="price" placeholder="" value= "<?php echo $r['price'] ?>" >
+          <i class="glyphicon glyphicon-lock"></i>
+        </div>
+         
+         
         <label class="hvr-skew-backward">
           <input type="submit" name="submit" value="Update">
         </label>

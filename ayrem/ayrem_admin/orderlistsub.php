@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Atopooilcompany</title>
+	<title>Ayrem</title>
 </head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -78,9 +78,8 @@
                     <th>Orderid</th>
                     <th>Name</th>
                     <th>Contact</th>
-                    <th>Address</th>
+                    <th>iuc</th>
                     <th>Email</th>
-                    <th>Item</th>
                     <th>Amount</th>
                     <th>Status</th>
                     <th>Dateordered</th>
@@ -91,12 +90,11 @@
               </thead>
               <tfoot>
                   <tr>
-                    <th>Orderid</th>
+                     <th>Orderid</th>
                     <th>Name</th>
                     <th>Contact</th>
-                    <th>Address</th>
+                    <th>iuc</th>
                     <th>Email</th>
-                    <th>Item</th>
                     <th>Amount</th>
                     <th>Status</th>
                     <th>Dateordered</th>
@@ -112,13 +110,13 @@
 <?php
 require("conn.php");
           $n=0;
-          $select = mysqli_query($con, "select * from order_tb");
+          $select = mysqli_query($con, "select * from order_tb join type_tb using (type_id)");
           while($r=mysqli_fetch_array($select)){
              $n++;
                    $id=$r['order_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['contact']."</td><td>".$r['address']."</td><td>".$r['email']."</td><td>".$r['item']."</td><td>".$r['amount']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td><td>".$r['dateDelivered']."</td><td><a href='edit.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
-<td><a href='deleteorder.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['phone']."</td><td>".$r['iuc']."</td><td>".$r['email']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td><td>".$r['dateDelivered']."</td><td><a href='editsub.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
+<td><a href='deletesub.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
 }
 
 ?> </tbody>
@@ -146,8 +144,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['contact']."</td><td>"
                                     <thead>
                                         <tr>
                     <th>Orderid</th>
-                    <th>Customer name</th>
-                    <th>Item</th>
+                    <th>Name</th>
+                    <th>Iuc</th>
                     <th>Amount</th>
                     <th>Status</th>
                     <th>Dateordered</th>
@@ -157,8 +155,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['contact']."</td><td>"
                                 
                                   <?php
                                     $n=0;
-                                  $con=mysqli_connect("localhost","root","","atopooil_db");
-                                  $saless= mysqli_query($con, "SELECT * FROM `order_tb` WHERE status='unconfirmed' ");
+                                require("conn.php");
+                                  $saless= mysqli_query($con, "select * from order_tb join type_tb using (type_id) WHERE status='unconfirmed' ");
 
                                      while($r=mysqli_fetch_array($saless)){
 
@@ -168,7 +166,7 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['contact']."</td><td>"
   $n++;
                    $id=$r['order_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r['amount']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['iuc']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td></tr>";
 }
 
 ?> 
@@ -180,8 +178,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
                                     <thead>
                                         <tr>
                                                                <th>Orderid</th>
-                    <th>Customer name</th>
-                    <th>Item</th>
+                    <th>Name</th>
+                    <th>Iuc</th>
                     <th>Amount</th>
                     <th>Status</th>
                     <th>DateDelivered</th>
@@ -191,8 +189,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
 
                                   <?php
                                    $n=0;
-                                  $con=mysqli_connect("localhost","root","","atopooil_db");
-                                 $mont= mysqli_query($con, "SELECT * FROM `order_tb` WHERE status='confirmed' ");
+                                  require("conn.php");
+                                 $mont= mysqli_query($con, "select * from order_tb join type_tb using (type_id) WHERE status='confirmed' ");
                        while($r=mysqli_fetch_array($mont)){
 
   //echo $r['last_1_month'];
@@ -201,7 +199,7 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
   $n++;
                    $id=$r['order_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r['amount']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['iuc']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
 }
 
 ?> 
@@ -215,8 +213,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
                                     <thead>
                                         <tr>
                                                                 <th>Orderid</th>
-                    <th>Customer name</th>
-                    <th>Item</th>
+                    <th>Name</th>
+                    <th>Iuc</th>
                     <th>Amount</th>
                     <th>Status</th>
                     <th>DateDelivered</th>
@@ -225,8 +223,8 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
                                     </thead>
                                     <?php
                                      $n=0;
-                                  $con=mysqli_connect("localhost","root","","atopooil_db");
-                                 $year= mysqli_query($con, "SELECT * FROM `order_tb` WHERE status='delivered'");
+                                  require("conn.php");
+                                 $year= mysqli_query($con, "select * from order_tb join type_tb using (type_id) WHERE status='delivered'");
                        while($r=mysqli_fetch_array($year)){
 
   //echo $r['last_1_month'];
@@ -234,7 +232,7 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r
                      $n++;
                    $id=$r['order_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['item']."</td><td>".$r['amount']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['iuc']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
 }
 
 ?> 

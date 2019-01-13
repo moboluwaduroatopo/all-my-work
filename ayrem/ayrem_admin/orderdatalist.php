@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ayrem</title>
+  <title>Ayrem</title>
 </head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -75,26 +75,28 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                   <tr>
-                    <th>id</th>
+                    <th>Orderid</th>
                     <th>Name</th>
+                    <th>Contact</th>
                     <th>Email</th>
-                    <th>Subject</th>
-                   <th>message</th>
-                    <th>Sent</th>
-                    <th>Replied</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Dateordered</th>
+                    <th>DateDelivered</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
               </thead>
               <tfoot>
-                     <tr>
-                    <th>id</th>
+                  <tr>
+                     <th>Orderid</th>
                     <th>Name</th>
+                    <th>Contact</th>
                     <th>Email</th>
-                    <th>Subject</th>
-                   <th>message</th>
-                    <th>Sent</th>
-                    <th>Replied</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Dateordered</th>
+                    <th>DateDelivered</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -106,13 +108,13 @@
 <?php
 require("conn.php");
           $n=0;
-          $select = mysqli_query($con, "select * from mail_tb");
+          $select = mysqli_query($con, "select * from orderd_tb join type_tb using (type_id)");
           while($r=mysqli_fetch_array($select)){
              $n++;
-                   $id=$r['mail_id'];
+                   $id=$r['orderd_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$r['subject']."</td><td>".$r['message']."</td><td>".$r['datesend']."</td><td>".$r['datereplied']."</td><td><a href='editcon.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
-<td><a href='deletecon.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['phone']."</td><td>".$r['email']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td><td>".$r['dateDelivered']."</td><td><a href='editdata.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
+<td><a href='deletedata.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
 }
 
 ?> </tbody>
@@ -131,7 +133,7 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Uncomfirmed</a>
                                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Comfirmed</a>
-                                
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Delivered</a>
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -139,19 +141,19 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
                                 <table class="table" cellspacing="0">
                                     <thead>
                                         <tr>
-                    <th>id</th>
+                    <th>Orderid</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Amount</th>
                     <th>Status</th>
-                    <th>Datesend</th>
+                    <th>Dateordered</th>
                    
                                         </tr>
                                     </thead>
                                 
                                   <?php
                                     $n=0;
-                               require("conn.php");
-                                  $saless= mysqli_query($con, "SELECT * FROM `mail_tb` WHERE status='unconfirmed' ");
+                                require("conn.php");
+                                  $saless= mysqli_query($con, "select * from orderd_tb join type_tb using (type_id) WHERE status='unconfirmed' ");
 
                                      while($r=mysqli_fetch_array($saless)){
 
@@ -159,9 +161,9 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
     //$_SESSION['cur']=$r['CURRENTDATE '];                                   
                           //$_SESSION['sales']=$r['a_day'];
   $n++;
-                   $id=$r['mail_id'];
+                   $id=$r['orderd_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$r['status']."</td><td>".$r['datesend']."</td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateOrdered']."</td></tr>";
 }
 
 ?> 
@@ -172,11 +174,11 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
                                 <table class="table" cellspacing="0">
                                     <thead>
                                         <tr>
-                                                               <th>id</th>
-                    <th>Name</th>
-                    <th>Email</th>
+                                                               <th>Orderid</th>
+                    <th>Name</th>               
+                    <th>Amount</th>
                     <th>Status</th>
-                    <th>DateReplied</th>
+                    <th>DateDelivered</th>
                                            
                                         </tr>
                                     </thead>
@@ -184,16 +186,16 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
                                   <?php
                                    $n=0;
                                   require("conn.php");
-                                 $mont= mysqli_query($con, "SELECT * FROM `mail_tb` WHERE status='reply' ");
+                                 $mont= mysqli_query($con, "select * from orderd_tb join type_tb using (type_id) WHERE status='confirmed' ");
                        while($r=mysqli_fetch_array($mont)){
 
   //echo $r['last_1_month'];
     //$_SESSION['cur']=$r['CURRENTDATE '];                                   
                                              //$_SESSION['sales']=$r['a_day'];
   $n++;
-                   $id=$r['mail_id'];
+                   $id=$r['orderd_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$r['status']."</td><td>".$r['datereplied']."</td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
 }
 
 ?> 
@@ -202,7 +204,36 @@ echo "<tr><td>". $n."</td><td>".$r['name']."</td><td>".$r['email']."</td><td>".$
                                   
                                 </table>
                             </div>
-                     
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                                                <th>Orderid</th>
+                    <th>Name</th>                
+                  <th>Amount</th>
+                    <th>Status</th>
+                    <th>DateDelivered</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <?php
+                                     $n=0;
+                                  require("conn.php");
+                                 $year= mysqli_query($con, "select * from orderd_tb join type_tb using (type_id) WHERE status='delivered'");
+                       while($r=mysqli_fetch_array($year)){
+
+  //echo $r['last_1_month'];
+    //$_SESSION['cur']=$r['CURRENTDATE '];                                   
+                     $n++;
+                   $id=$r['orderd_id'];
+                   $_SESSION['id']=$id;
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['price']."</td><td>".$r['status']."</td><td>".$r['dateDelivered']."</td></tr>";
+}
+
+?> 
+                                     
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

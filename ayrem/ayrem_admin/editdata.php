@@ -1,15 +1,15 @@
 <?php 
 session_start();
-$con=mysqli_connect("localhost","root","","atopooil_db");
+  require('conn.php');
 $_SESSION['id'] = $_GET['id'];
 echo $_SESSION['id'];
-$view = mysqli_query($con, "select * from product_tb where product_id = '$_SESSION[id]'")or die(mysqli_error($con));
+$view = mysqli_query($con, "select * from orderd_tb where orderd_id = '$_SESSION[id]'")or die(mysqli_error($con));
 while($r=mysqli_fetch_array($view)){
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Atopooilcompany</title>
+<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -57,33 +57,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--login-->
 <div class="container">
-  <h3 class="text-center">Update product</h3>
     <div class="login">
-
-      <form class="form-horizontal" method="post" action="editpro.php" enctype="multipart/form-data">
+      <form class="form-horizontal" method="post" action="editsubp.php" enctype="multipart/form-data">
+        <span style="color: white;margin-left: 150px;background-color: red;width: 30%;height: 50px"><?php if(isset($return)){ echo $return;} ?></span>
       <div class="col-md-6 login-do">
         <div class="login-mail">
-          <input type="text" name="name" placeholder="" value= "<?php echo $r['product_name'] ?>" >
+          <input type="text" name="status" placeholder="" value= <?php echo $r['status'] ?> required="">
           <i class="glyphicon glyphicon-lock"></i>
         </div>
-          
-         <div class="login-mail">
-          <textarea name="decrip1" class="form-control input-md"   style="height: 300px"><?php echo $r['decrip1'] ?></textarea>
-        </div>
-         <div class="login-mail">
-          <textarea name="decrip2"  class="form-control input-md"  style="height: 300px"><?php echo $r['decrip2'] ?> </textarea>
-          
-        </div> 
-         <div class="login-mail">
-          <p><img style="width: 40px;height: 40px" src="<?php echo $r['proimage'] ?>" ></p>
-           <input id="file" name="ppt" type="file" value="<?php echo $r['proimage'] ?> " class="form-control input-md" accept="image/* " >
-        </div>
+           
         <label class="hvr-skew-backward">
-          <input type="submit" name="submit" value="Update">
+          <input type="submit" name="submit" value="Submit">
         </label>
       
       </div>
-      
+      <div class="col-md-6 login-right">
+         <h3>Status</h3>
+         Step1:
+         <p>uncomfirmed</p>
+          Step2:
+          <p>comfirmed</p>
+        Step3:
+        <p>delivered</p>
+      </div>
       
       <div class="clearfix"> </div>
       </form>

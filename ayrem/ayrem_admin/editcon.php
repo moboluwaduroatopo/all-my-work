@@ -1,15 +1,15 @@
-<?php
-$connect=mysqli_connect("localhost","root","","ayrem_db");
-if (isset($_SESSION["userid"])) {
-  //session_destroy();
-header("Location: dashboard.php");
-}
-
+<?php 
+session_start();
+  require('conn.php');
+$_SESSION['id'] = $_GET['id'];
+echo $_SESSION['id'];
+$view = mysqli_query($con, "select * from mail_tb where mail_id = '$_SESSION[id]'")or die(mysqli_error($con));
+while($r=mysqli_fetch_array($view)){
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ayrem</title>
+<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -19,9 +19,6 @@ header("Location: dashboard.php");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shopin Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndroId Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="text/javascript" src="jquery/popper.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
-<script type="text/javascript" src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--theme-style-->
 <link href="css/style4.css" rel="stylesheet" type="text/css" media="all" /> 
@@ -53,32 +50,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 <!---//End-rate---->
 </head>
-<body >
-<div class="container ">
-    <div class="login ">
-      <form class="form-horizontal" method="post" action="admin.php" enctype="multipart/form-data">
+<body>
+<!--header-->
+
+<!--banner-->
+
+<!--login-->
+<div class="container">
+    <div class="login">
+      <form class="form-horizontal" method="post" action="editconp.php" enctype="multipart/form-data">
+        <span style="color: white;margin-left: 150px;background-color: red;width: 30%;height: 50px"><?php if(isset($return)){ echo $return;} ?></span>
       <div class="col-md-6 login-do">
         <div class="login-mail">
-          <input type="text" name="email" placeholder="Email" required="">
-          <i  class="glyphicon glyphicon-envelope"></i>
-        </div>
-        <div class="login-mail">
-          <input type="password" name="password" placeholder="Password" required="">
+          <input type="text" name="status" placeholder="" value= <?php echo $r['status'] ?> required="">
           <i class="glyphicon glyphicon-lock"></i>
         </div>
-           <a class="news-letter " href="#">
-             <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-             </a>
+           
         <label class="hvr-skew-backward">
           <input type="submit" name="submit" value="Submit">
         </label>
-      <a href="adminregister.php"> <p>Not a member?</p></a>
+      
+      </div>
+      <div class="col-md-6 login-right">
+         <h3>Status</h3>
+         Step1:
+         <p>uncomfirmed</p>
+          Step2:
+          <p>reply</p>
       </div>
       
       <div class="clearfix"> </div>
       </form>
     </div>
-
+  
 </div>
 
 <!--//login-->
@@ -94,3 +98,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  
 </body>
 </html>
+<?php
+};
+?>

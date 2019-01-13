@@ -4,8 +4,6 @@ if (isset($_SESSION["userid"])) {
   //session_destroy();
 //header("Location: userindex.php");
     //echo "done";
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,14 +37,12 @@ if (isset($_SESSION["userid"])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Buy Data<span class="sr-only">(current)</span></a>
+          <a class="nav-link" >Buy Data<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="data.php">Tv Subcription</a>
+          <a class="nav-link" >Tv Subcription</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.php">Contact Us</a>
-        </li>
+       
       </ul>
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">

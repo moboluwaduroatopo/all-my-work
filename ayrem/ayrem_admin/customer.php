@@ -22,67 +22,46 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Add Categories</li>
+        <li class="breadcrumb-item active">Customer</li>
       </ol>
      <div   id="margin" class="row">
-      <div    class="col-md-6">
-     	<form class="form-horizontal" method="post" action="typeprocess.php" enctype="multipart/form-data">
-
-<fieldset>
-
-<!-- Form Name -->
-<legend style="color:#FF5500; text-align: left;">Add New Categories</legend>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-6 control-label" for="textinput" id="color">New Categories</label>  
-  <div class="col-md-8">    
-  <input id="Nproduct" name="type_name" type="New product" placeholder="New categories" class="form-control input-md" required="">
     
-  </div>
-</div>
-<!-- <div class="form-group">
-  <label class="col-md-6 control-label" for="textinput" id="color">Categories type</label>  
-  <div class="col-md-8">
-    <select class="form-control" name="cat_type">
-      <option value="a">a</option>
-      <option value="b">b</option>
-    </select>
-  </div>
-</div> -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
-  <div class="col-md-6" >
-    <button style="" id="singlebutton"  name="submit" class="btn btn-primary button1">save</button>
-  </div>
-</div>
-   
-</fieldset>
-</form>
-</div>
-<div  class="col-md-6">
+<div  class="col-md-12">
   <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> categories  </div>
+          <i class="fa fa-table"></i>Customer List  </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                   <tr>
-                   <th>No</th>
-                    <th>Name</th>
-                   
-                    <th>Edit</th>
+                    <th>No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>state</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Aboutus</th>
+                    <th>RegDate</th>
+                    
                     <th>Delete</th>
                   </tr>
               </thead>
               <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Name</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>state</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Aboutus</th>
+                    <th>RegDate</th>
                     
-                    <th>Edit</th>
                     <th>Delete</th>
                   </tr>
               </tfoot>
@@ -93,13 +72,13 @@
 <?php
 require("conn.php");
           $n=0;
-          $select = mysqli_query($con, "select * from category_tb");
+          $select = mysqli_query($con, "select * from user_db");
           while($r=mysqli_fetch_array($select)){
              $n++;
-                   $id=$r['category_id'];
+                   $id=$r['user_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td><a href='editcat.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
-<td><a href='deletetype.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['firstname']."</td><td>".$r['lastname']."</td><td>".$r['state']."</td><td>".$r['username']."</td><td>".$r['phone']."</td><td>".$r['email']."</td><td>".$r['password']."</td><td>".$r['aboutus']."</td><td>".$r['udate']."</td>
+<td><a href='deletecus.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
 }
 
 ?> </tbody>

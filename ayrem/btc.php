@@ -1,9 +1,8 @@
  <?php include('navbar.php'); ?>
-      <button type="button" class="btn btn-outline-default btn-rounded waves-effect" style="margin-left: 35%"><img src="images/e-currencies.png" style=""></button>
+      <button type="button" class="btn btn-outline-default btn-rounded waves-effect" style="margin-left: 40%;border-radius: 30px"><h2>e-<span style="color: red;font-size: 60px">c</span>urrency </h2></button>
  <div class="container">
  	 <!--Carousel Wrapper-->
 <div id="carousel-with-lb" class="carousel slide carousel-multi-item" data-ride="carousel">
-
   <!--Controls-->
   <div class="controls-top">
     <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
@@ -85,10 +84,9 @@
 <!--/.Carousel Wrapper-->
 <div>
 	<h3 style="color: #66cc99">To Sell e-currency</h3>
-	<p>Log into your account. (If you dont have an account with us, create one using the registration form below)<br>
-
-Under Menu, click on Sell Bitcoin</p>
+	<p>Please contact us. (By using the form below ) or call us 07069205659<br>
+</p>
 </div><br><br>
- <?php include('signup.php'); ?>
+ <?php include('cont.php'); ?>
  </div><br><br>
   <?php include('footer.php'); ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Atopooilcompany</title>
+<title>Ayrem</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -71,7 +71,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="login-mail">
            <input id="file" name="ppt" type="file" placeholder="choose product file" class="form-control input-md" accept="image/* " required="">
-          
         </div>
            <a class="news-letter " href="#">
              <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
@@ -86,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          
          <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio 
          libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
-        <a href="adminlogin1.php" class="hvr-skew-backward">Login</a>
+        <a href="login.php" class="hvr-skew-backward">Login</a>
 
       </div>
       

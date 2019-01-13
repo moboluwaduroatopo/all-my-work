@@ -22,35 +22,53 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Add Categories</li>
+        <li class="breadcrumb-item active">Add Categories Type</li>
       </ol>
      <div   id="margin" class="row">
       <div    class="col-md-6">
-     	<form class="form-horizontal" method="post" action="typeprocess.php" enctype="multipart/form-data">
+     	<form class="form-horizontal" method="post" action="newtypeprocess.php" enctype="multipart/form-data">
 
 <fieldset>
 
 <!-- Form Name -->
-<legend style="color:#FF5500; text-align: left;">Add New Categories</legend>
+<legend style="color:#FF5500; text-align: left;">Add New Categories Type</legend>
 
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-6 control-label" for="textinput" id="color">New Categories</label>  
+  <label class="col-md-6 control-label" for="textinput" id="color">New Categories Type</label>  
   <div class="col-md-8">    
   <input id="Nproduct" name="type_name" type="New product" placeholder="New categories" class="form-control input-md" required="">
     
   </div>
 </div>
-<!-- <div class="form-group">
-  <label class="col-md-6 control-label" for="textinput" id="color">Categories type</label>  
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Price</label>  
+  <div class="col-md-8">    
+  <input id="Nproduct" name="price" type="New product" placeholder="Price" class="form-control input-md" required="">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-6 control-label" for="textinput" id="color">Categories</label>  
   <div class="col-md-8">
-    <select class="form-control" name="cat_type">
-      <option value="a">a</option>
-      <option value="b">b</option>
+      <?php 
+   require('conn.php');
+
+    $typ= mysqli_query($con, "select * from category_tb" );
+
+  ?>
+  <select name="typ" class="form-control">
+
+    <?php
+    while($r = mysqli_fetch_array($typ)){
+      
+      echo "<option value='".$r['category_id']."'>".$r['name']."</option>";
+    }
+    ?>
     </select>
   </div>
-</div> -->
+</div>
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-6" >
@@ -64,7 +82,7 @@
 <div  class="col-md-6">
   <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> categories  </div>
+          <i class="fa fa-table"></i>Product categories  </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -72,7 +90,8 @@
                   <tr>
                    <th>No</th>
                     <th>Name</th>
-                   
+                    <th>Price</th>
+                    <th>cat_name</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -81,7 +100,8 @@
                   <tr>
                     <th>No</th>
                     <th>Name</th>
-                    
+                    <th>Price</th>
+                    <th>cat_name</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -93,13 +113,13 @@
 <?php
 require("conn.php");
           $n=0;
-          $select = mysqli_query($con, "select * from category_tb");
+          $select = mysqli_query($con, "select * from type_tb join category_tb using (category_id)");
           while($r=mysqli_fetch_array($select)){
              $n++;
-                   $id=$r['category_id'];
+                   $id=$r['type_id'];
                    $_SESSION['id']=$id;
-echo "<tr><td>". $n."</td><td>".$r['name']."</td><td><a href='editcat.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
-<td><a href='deletetype.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
+echo "<tr><td>". $n."</td><td>".$r['catname']."</td><td>".$r['price']."</td><td>".$r['name']."</td><td><a href='edittype.php?id=".$id."'><button class='btn btn-success'>Edit</button></a></td>
+<td><a href='deletecat.php?id=".$id."'><button class='btn btn-success'>Delete</button></a></td></tr>";
 }
 
 ?> </tbody>

@@ -1,15 +1,15 @@
 <?php 
 session_start();
-$con=mysqli_connect("localhost","root","","atopooil_db");
+require("conn.php");
 $_SESSION['id'] = $_GET['id'];
 echo $_SESSION['id'];
-$view = mysqli_query($con, "select * from contactus_tb where contact_id = '$_SESSION[id]'")or die(mysqli_error($con));
+$view = mysqli_query($con, "select * from admin_db where admin_id = '$_SESSION[id]'")or die(mysqli_error($con));
 while($r=mysqli_fetch_array($view)){
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Register :: w3layouts</title>
+<title>Atopooilcompany</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -57,28 +57,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--login-->
 <div class="container">
+  <h3 class="text-center">Update Admin</h3>
     <div class="login">
-      <form class="form-horizontal" method="post" action="edit1.php" enctype="multipart/form-data">
-        <span style="color: white;margin-left: 150px;background-color: red;width: 30%;height: 50px"><?php if(isset($return)){ echo $return;} ?></span>
-      <div class="col-md-6 login-do">
+
+      <form class="form-horizontal" method="post" action="editadminp.php" enctype="multipart/form-data">
+      <div class="col-md-6 login-do"> 
+         <div class="login-mail">
+          <input type="text" name="fname" placeholder="Fullname" value= "<?php echo $r['full_name'] ?>" >
+          <i  class="glyphicon glyphicon-user"></i>
+        </div>
         <div class="login-mail">
-          <input type="text" name="status" placeholder="" value= <?php echo $r['status'] ?> required="">
+          <input type="text" name="phone" placeholder="Phone Number"value= "<?php echo $r['phone'] ?>" >
+          <i  class="glyphicon glyphicon-phone"></i>
+        </div>
+        <div class="login-mail">
+          <input type="text" name="email" placeholder="Email" value= "<?php echo $r['email'] ?>" >
+          <i  class="glyphicon glyphicon-envelope"></i>
+        </div>
+        <div class="login-mail">
+          <input type="password" name="password" placeholder="Password" value= "<?php echo $r['password'] ?>" >
           <i class="glyphicon glyphicon-lock"></i>
         </div>
-           
         <label class="hvr-skew-backward">
-          <input type="submit" name="submit" value="Submit">
+          <input type="submit" name="submit" value="Update">
         </label>
       
       </div>
-      <div class="col-md-6 login-right">
-         <h3>Status</h3>
-         Step1:
-         <p>uncomfirmed</p>
-          Step2:
-          <p>reply</p>
-       
-      </div>
+      
       
       <div class="clearfix"> </div>
       </form>

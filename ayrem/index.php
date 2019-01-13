@@ -53,8 +53,8 @@
       <!--Caption-->
       <div class="carousel-caption">
         <div class="animated fadeInDown">
-          <h3 class="h3-responsive">Subscribe</h3>
-          <p>now</p>
+          <h3 class="h3-responsive" style="color: red">Subscribe</h3>
+          <p style="color: blue">now</p>
         </div>
       </div>
       <!--Caption-->
@@ -97,12 +97,12 @@
   <!--/.Controls-->
 </div>
 
-<div class="container">
-<a><button type="button" class="btn btn-info btn-rounded">Login</button></a>
-<a><button type="button" class="btn btn-light btn-rounded">Register</button></a>
+<div class="container" style="float: ">
+<a href="login.php"><button type="button" class="btn btn-info btn-rounded">Login</button></a>
+<a href="register.php"><button type="button" class="btn btn-light btn-rounded">Register</button></a>
 </div>
 <div class="container">
-	<h2 class="text-center default-color">Our Services</h2>
+	<h2 class="text-center default-color"><span style="color: white">Our</span>  <span style="color: red">Services</span></h2>
 <div class="row">
 
   <div class="col-lg-6 col-md-12 mb-6">

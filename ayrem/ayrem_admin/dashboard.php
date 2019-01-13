@@ -1,6 +1,6 @@
 <?php session_start();
-$connect=mysqli_connect("localhost","root","","atopooil_db");
-if (isset($_SESSION["userid"])) {
+$connect=mysqli_connect("localhost","root","","ayrem_db");
+if (isset($_SESSION["adminid"])) {
  //session_destroy();
 //header("Location: adminlogin.html");
 
@@ -14,7 +14,7 @@ if (isset($_SESSION["userid"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Atopooilcompany</title>
+  <title>Ayrem</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -27,8 +27,8 @@ if (isset($_SESSION["userid"])) {
 
 <body class="fixed-nav sticky-footer bg-" id="page-top" style="background-color: #ffffff">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand " href="http://localhost/web">ATOPOOILstore</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav" >
+    <a class="navbar-brand " href="http://localhost/web">Ayrem</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,18 +40,35 @@ if (isset($_SESSION["userid"])) {
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="Addnewproduct.php">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">ADD PRODUCT </span>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages2" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">USERS</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages2">
+            <li>
+              <a href="adminlist.php">ADMIN LIST</a>
+            </li>
+            <li>
+              <a href="customer.php">CUSTOMER LIST</a>
+            </li>
+            
+            
+          </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="addtype.php">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">ADD Categories </span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="Addnewtype.php">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">ADD TYPE </span>
+          </a>
+        </li>
+      
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
@@ -71,12 +88,28 @@ if (isset($_SESSION["userid"])) {
           </ul>
         </li>
         
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="productlist.php">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">PRODUCT LIST</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages1" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text"> ORDER </span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages1">
+            <li>
+              <a href="orderlistsub.php">ORDERSUB LIST</a>
+            </li>
+            <li>
+              <a href="orderdatalist.php">ORDERDATA LIST</a>
+            </li>
+            
+            
+          </ul>
         </li>
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="orderlist.php">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">ORDER LIST</span>
+          </a>
+        </li> -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="contact.php">
             <i class="fa fa-fw fa-link"></i>

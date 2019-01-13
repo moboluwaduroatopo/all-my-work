@@ -57,7 +57,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:Design by
-      POL ,a.k.a moboluwaduro A(MA)
+      POL ,a.k.a moboluwaduro tee(MT)
     </div>
     <!-- Copyright -->
 

@@ -10,11 +10,11 @@ $errors=array();
 
 		public function connect(){
 
-			$this->connection=mysqli_connect("localhost", "root", "", "atopooil_db");
+			$this->connection=mysqli_connect("localhost", "root", "", "ayrem_db");
 		}
 
 			private function emailExists($email){
-		$pre_stmt = $this->connection->prepare("SELECT user_id FROM user_tb WHERE email = ? ");
+		$pre_stmt = $this->connection->prepare("SELECT admin_id FROM admin_db WHERE email = ? ");
 		$pre_stmt->bind_param("s",$email);
 		$pre_stmt->execute() or die($this->connection->error);
 		$result = $pre_stmt->get_result();
@@ -36,7 +36,7 @@ $errors=array();
 			// $notes = ""
 			$pwd=sha1($password);
 			//$date=now();
-			$pre_stmt = $this->connection->prepare("INSERT INTO user_tb(full_name,phone,email,password,uimage,userdate)
+			$pre_stmt = $this->connection->prepare("INSERT INTO admin_db(full_name,phone,email,password,uimage,userdate)
             VALUES (?,?,?,?,?,?)");
 			$pre_stmt->bind_param("ssssss",$fname,$phone,$email,$pwd,$ppt,$date);
 			$result = $pre_stmt->execute() or die($this->connection->error);

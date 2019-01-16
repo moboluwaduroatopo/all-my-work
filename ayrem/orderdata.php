@@ -1,12 +1,14 @@
+<style type="text/css">
+  
+</style>
 <?php include('userindex.php'); ?><br>
 <div class="container">
-  
 <div class="row">
 
   <div class="col-lg-12 col-md-12 mb-6">
     <!--Card-->
     <div class="card card-cascade wider mb-4">
-        <h2 class="text-center ">Thank you so much for order. We're not here right now but might be responding to other people.please, kindly use this number 07069205659 to call our attention.Thanks for your patronage. </h2>
+        <h2 class="text-center text-success">Thank you so much for order. We're not here right now but might be responding to other people.please, kindly use this number 07069205659 to call our attention.Thanks for your patronage. </h2>
       <div class="card-body card-body-cascade text-center">
         <!--Title-->
           
@@ -21,7 +23,7 @@
 </div>
   </div>
 <div class="container">
-	<h3>Your Transaction Details are as follows:</h3>
+	<h3 class="text-center">Your Transaction Details are as follows:</h3>
 <table class="table table-sm">
   <tbody>
      <?php 
@@ -29,12 +31,10 @@
    //echo
     $_SESSION['id'];
    //$tid= $_GET['tid'];
-    $typ2= mysqli_query($con, "select * from orderd_tb join type_tb using(type_id) where orderd_id = $_SESSION[id]"); 
+    $typ2= mysqli_query($con, "select * from type_tb join orderd_tb using (type_id) where orderd_id = $_SESSION[id]"); 
   ?>
     	          <?php
     while($r = mysqli_fetch_array($typ2)){
-        $id=$r['order_id'];
-        $_SESSION['id']=$id;
  
       echo "<tr>
         <td>Product</td>
@@ -54,7 +54,7 @@
         <tr>
         <tr>
         <td>Transactio ID</td>
-        <td>".$r['order_id']."</td>
+        <td>".$r['orderd_id']."</td>
         <tr>
         ";
     }

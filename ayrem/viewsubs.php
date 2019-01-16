@@ -87,7 +87,7 @@
             <!-- Phone number -->
             
             <!-- Sign up button -->
-            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" name="submit" type="submit">Continue</button>
+            <button  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" name="submit" type="submit">Continue</button>
 
             <!-- Social register -->
         </form>

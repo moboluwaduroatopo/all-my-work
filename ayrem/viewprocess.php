@@ -15,10 +15,14 @@
 				$date = date('m/d/y h:i:s A');
 			$result=mysqli_query($this->connect, "INSERT INTO order_tb(iuc,phone,email,status,dateOrdered,dateDelivered,type_id) VALUES ('$iuc','$phone','$email','unconfirmed',now(),'','$typ')");
 				if ($result) {
-					// $order_id=$order;
-					// $order= $_SESSION[id];
-					// //echo "done ";
-					// echo $order;
+					$fetchID = mysqli_query($this->connect,"select order_id from order_tb ");
+					while($fid = mysqli_fetch_array($fetchID))
+					{
+						//$sid = $fid['sales_id'];
+						$_SESSION['id']=$fid['order_id'];
+						
+					}
+					//echo  $_SESSION['id'];
 					header("Location:ordersub.php");
 				}
 

@@ -18,7 +18,7 @@
         endforeach;
 
         $amount = $total ;
-         $q=mysqli_query($con, "INSERT INTO order(name,contact,address,email,item,amount,status,dateOrdered,dateDelivered)VALUES('$fullname','$contact','$address','$email','$item','$amount','unconfirmed','$date','')");
+         $q=mysqli_query($con, "INSERT INTO order_tb(name,contact,address,email,item,amount,status,dateOrdered,dateDelivered)VALUES('$fullname','$contact','$address','$email','$item','$amount','unconfirmed','$date','')");
          
         if ($q) {
             unset($_SESSION['cart']); 

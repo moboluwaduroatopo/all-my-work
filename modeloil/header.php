@@ -9,7 +9,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>modeloil</title>
   <!-- Font Awesome -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"> -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -21,7 +21,7 @@
 <body>
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
-  <a class="navbar-brand" href="#" style="margin-right: 10%">MODELOIL LIMITED</a>
+  <a class="navbar-brand" href="#" style="margin-right: 10%"><img src="images/logo.png" style="width: 100%;height: 100px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
     <ul class="navbar-nav ml-auto " style="margin-right: 30%">
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="index.php">
          Home
           <span class="sr-only">(current)</span>
         </a>

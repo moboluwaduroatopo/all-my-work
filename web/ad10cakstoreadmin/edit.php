@@ -74,11 +74,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="col-md-6 login-right">
          <h3>Status</h3>
          Step1:
-         <p>Uncomfirmed</p>
+         <p>uncomfirmed</p>
           Step2:
-          <p>Comfirmed</p>
+          <p>comfirmed</p>
         Step3:
-        <p>Delivreed</p>
+        <p>delivered</p>
       </div>
       
       <div class="clearfix"> </div>

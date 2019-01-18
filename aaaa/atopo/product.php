@@ -70,7 +70,7 @@ $tid= $_GET['tid'];
 $view1 = mysqli_query($con, "select * from type_tb  where type_id ='$tid'")or die(mysqli_error($con));
 //$counter = 0;
 while($r=mysqli_fetch_array($view1)){
-	echo"<li>".$r['type_name']."</li>";
+	echo"<li>".$r['type_name']." </li>";
 };
 ?>
 					

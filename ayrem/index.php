@@ -15,7 +15,7 @@
       <!--Mask color-->
       <div class="view">
         <!--Video source-->
-        <video class="video-fluid" autoplay loop muted>
+        <video class="video-fluid" style='height:600px;width: 100%' autoplay loop muted>
           <source src="images/Lines.mp4" type="video/mp4" />
         </video>
         <div class="mask rgba-indigo-light"></div>
@@ -43,7 +43,7 @@
       <div class="view">
         <!--Video source-->
 
-        <img class="d-block w-100" src="images/edit.jpg" alt="">
+        <img class="d-block w-100" src="images/edit.jpg" alt="" style='height:600px;width: 100%'>
        <!--  <video class="video-fluid" autoplay loop muted>
           <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4" />
         </video> -->
@@ -66,7 +66,7 @@
       <!--Mask color-->
       <div class="view">
         <!--Video source-->
-        <video class="video-fluid" autoplay loop muted>
+        <video class="video-fluid" style='height:600px;width: 100%' autoplay loop muted>
           <source src="images/Tropical.mp4" type="video/mp4" />
         </video>
         <div class="mask rgba-black-strong"></div>

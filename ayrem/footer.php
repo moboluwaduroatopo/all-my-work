@@ -56,8 +56,8 @@
     <!-- Footer Text -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:Design by
-      POL ,a.k.a moboluwaduro tee(MT)
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:Design by
+      moboluwaduro TEE ,a.k.a moTEE
     </div>
     <!-- Copyright -->
 
